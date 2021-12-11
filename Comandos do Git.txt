@@ -1,0 +1,99 @@
+Font: https://blog.betrybe.com/tecnologia/comandos-git/
+
+Considerada uma das ferramentas mais importantes da área de desenvolvimento de software, o Git é um sistema de controle de versão open-source utilizado para o gerenciamento do histórico de alterações do código fonte de um projeto. A popularidade da ferramenta é tão grande que entender seus conceitos e saber usar os principais comandos Git tornou-se um requisito essencial para quem trabalha com programação.
+
+Para te ajudar nessa questão, elaboramos este artigo onde vamos introduzir os comandos mais básicos do Git, mostrar para quê eles servem e dando alguns exemplos de uso. Ao longo do post, você vai conhecer os seguintes comandos:
+
+Git ini.t: iniciando um repositório!
+Git clone: baixando um repositório!
+Git add e git commit: adicionando e confirmando mudanças!
+Git status: verificando alterações na branch!
+Git push: enviando as alterações para os repositórios remotos!
+Git pull: baixar atualizações do repositório remoto!
+Git revert: desfazendo as alterações!
+Git merge: mesclando branches!
+Git tag: criando rótulos para releases de software!
+Git reset: removendo as alterações!
+Fique com a gente e aproveite a leitura.
+
+Git init: iniciando um repositório!
+O comando git init é usado para criar o repositório Git no qual os arquivos do projeto serão armazenados. Para utilizá-lo, basta abrir o CMD, ou prompt, navegar até a pasta do projeto e rodar o seguinte comando:
+
+git init
+Se tudo der certo, o Git exibirá uma mensagem informando que o repositório vazio foi criado na pasta selecionada.
+
+Git clone: baixando um repositório!
+Com o comando git clone, podemos baixar na nossa máquina o código fonte de um repositório remoto. Ou seja, ele faz exatamente o que o nome sugere: cria uma cópia local de um repositório armazenado em um servidor como GitHub ou GitLab.
+
+Para isso, é necessário rodar no prompt o comando seguido do link do repositório que será clonado. Por exemplo:
+
+git clone https://github.com/nome-usuario/nome-projeto.git
+Após executar o comando, sua máquina terá um diretório com todos os arquivos, histórico e configuração do projeto.
+
+Git add e git commit: adicionando e confirmando mudanças!
+O git add é o comando que utilizamos quando queremos adicionar nossas alterações ao Index (que funciona como uma área para os arquivos modificados) para incluí-las no próximo commit. Podemos, por exemplo, incluir as atualizações de um arquivo específico da seguinte forma:
+
+git add nome-do-arquivo
+Já para adicionar as alterações de todos os diretórios do projeto, é possível usar:
+
+git add --all
+Por fim, após incluir as atualizações, usamos o git commit para confirmar e salvar o que foi modificado no repositório local. Observe:
+
+git commit -m "Descrição das alterações"
+Git status: verificando alterações na branch!
+O comando git status é usado para verificar as informações sobre o estado atual da nossa branch – que significa “ramo” e corresponde à estrutura do projeto. Quando criamos um projeto, é criado uma branch chamada master.
+
+Ao utilizar o comando git status, ele nos mostra as alterações do próximo commit, atualizações que não foram adicionadas, arquivos que não estão sob o controle de versão, entre outras informações pertinentes. 
+
+Para usá-lo, basta rodar o seguinte código:
+
+git status
+Vale ressaltar que a resposta ao comando dependerá do que há no repositório. Ou seja, caso ele esteja vazio, a reposta do Git mostrará que não há nenhum commit salvo e nem atualizações a adicionar.
+
+Git push: enviando as alterações para os repositórios remotos!
+Utilizando o comando git push, conseguimos enviar para o repositório remoto as alterações salvas pelo nosso último commit. Isso pode ser feito da seguinte maneira:
+
+git push origin nome-da-branch
+
+Git pull: baixar atualizações do repositório remoto!
+O comando git pull é usado para atualizar o repositório local com a versão disponível no servidor. Ou seja, ele baixa todas as alterações encontradas no repositório remoto e, imediatamente, faz a mesclagem das versões.
+
+A instrução que usamos nesse caso é bem simples. Observe:
+
+git pull
+Git revert: desfazendo as alterações!
+Utilizando o comando git revert podemos desfazer as mudanças de um commit existente. É importante explicar que ele não exclui dados nesse processo. Na verdade, o comando criará novas alterações para reverter o efeito do commit indicado.
+
+Para isso, devemos informar o hash do commit no comando dessa forma:
+
+git revert a72ef02
+No mais, para descobrir o número do hash do commit que precisa desfazer, você pode usar a instrução:
+
+git log --oneline
+Git merge: mesclando branches!
+Sem dúvidas, o merge é um dos comandos Git mais importantes. Afinal, é com ele que podemos mesclar as alterações feitas na nossa branch à branch master. Para isso, basta rodar o comando da seguinte forma:
+
+git merge nome-da-branch
+É importante lembrar que, na maioria das vezes, o Git consegue fazer o merge automaticamente. No entanto, em alguns casos ocorrem conflitos que devem ser resolvidos manualmente para que a mesclagem das alterações funcione.
+
+Git tag: criando rótulos para releases de software!
+Ao rodar o comando git tag, podemos criar etiquetas para demarcar uma versão, ou release, importante do nosso projeto de software. Para isso, devemos informar alguns parâmetros no código. Dessa forma:
+
+git tag 1.0
+Observe que, no exemplo mostrado, “1.0” é o nome dado para a tag criada e o comando não apresenta outros parâmetros. Porém, para criar tags com mensagens, podemos usar:
+
+git tag -a 1.0 -m "versão 1.0" 
+Caso deseje ver as tags após a criação das etiquetas, basta rodar:
+
+git tag
+Já, para conferir as informações de uma tag específica, podemos usar o comando:
+
+git show 1.0
+Git reset: removendo as alterações!
+Por fim, o comando git reset é o responsável por redefinir o HEAD atual para um estado específico. Com ele, podemos remover todas as alterações e commits locais de uma vez ou reverter commits específicos. Por exemplo, para remover um arquivo do stage (que corresponde à área dos arquivos marcados como modificados) usamos:
+
+git reset nome-do-arquivo
+Já, para remover todos os commits, podemos usar o comando:
+
+git reset --hard origin/master
+Agora você já conhece os principais comandos Git e sabe como usá-los na prática! Contudo, vale ressaltar que essa ferramenta conta com muitas outras instruções que podem ser conferidas na documentação oficial do Git e que tornarão o seu conhecimento sobre a área da programação ainda mais completo e robusto!
